@@ -75,6 +75,7 @@ def employee_delete():
     if request.method == 'POST':
         db.session.delete(employee)
         db.session.commit()
+        flash(f'Данные о работниках {employee.id} успешно удален', 'success')
         return redirect(url_for('employee'))
 
 
